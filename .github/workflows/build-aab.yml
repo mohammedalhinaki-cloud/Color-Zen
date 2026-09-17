@@ -1,7 +1,11 @@
 name: Build AAB
 
-# Builds and tests Color Zen on every push. Google Play accepts AAB only, so the
-# release job produces an Android App Bundle (`bundleRelease`).
+# Builds and tests Color Zen on every push. Google Play accepts AAB only, so
+# the release job produces an Android App Bundle (`bundleRelease`).
+#
+# Uses only GitHub-owned actions (checkout / setup-java / upload-artifact) and
+# the Android SDK pre-installed on the ubuntu runners, so it also passes
+# organisations that restrict which third-party actions may run.
 #
 # Optional signing: add these repository secrets to get a *signed* AAB that can
 # be uploaded straight to Play Console:
@@ -37,12 +41,7 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
-
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Set up Gradle
-        uses: gradle/actions/setup-gradle@v4
+          cache: gradle
 
       - name: Run unit tests
         run: ./gradlew testDebugUnitTest --stacktrace
@@ -68,12 +67,7 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
-
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Set up Gradle
-        uses: gradle/actions/setup-gradle@v4
+          cache: gradle
 
       - name: Decode upload keystore (optional)
         if: ${{ secrets.KEYSTORE_BASE64 != '' }}
