@@ -73,7 +73,8 @@ class SolverTest {
         val hint = Solver.hint(state)
         assertNotNull(hint.move)
         assertTrue(hint.exactSolution)
-        assertTrue(GameRules.canPour(state, hint.move!!))
+        val move = hint.move!!
+        assertTrue(GameRules.canPour(state, move.from, move.to))
     }
 
     @Test
