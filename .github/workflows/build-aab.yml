@@ -68,7 +68,7 @@ jobs:
         if: failure()
         run: |
           grep -E "FAILED|error:|^e: |What went wrong|Caused by:|> " gradle-tests.log \
-            | grep -v "^> Task" | head -12 | while IFS= read -r line; do
+            | grep -v "^> Task" | head -30 | while IFS= read -r line; do
               echo "::error::${line:0:240}"
             done
 
