@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f7f4ef">
+  <meta name="description" content="Color Zen — a calm, colorful water-sort puzzle with 120 handcrafted levels.">
+  <title>Color Zen — Play</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <main class="shell">
+    <header class="topbar">
+      <button class="brand" id="homeButton" aria-label="Choose a level"><span class="brand-mark">C</span><span><b>Color Zen</b><small>pour · sort · breathe</small></span></button>
+      <div class="header-actions">
+        <button class="icon-btn" id="soundButton" aria-label="Toggle sound" title="Sound">♫</button>
+        <button class="icon-btn" id="paletteButton" aria-label="Change palette" title="Palette">◉</button>
+      </div>
+    </header>
+
+    <section id="levelScreen" class="screen levels-screen">
+      <div class="hero">
+        <p class="eyebrow">A quiet puzzle for busy minds</p>
+        <h1>Find calm in<br><em>every color.</em></h1>
+        <p>Pour matching colors together until every bottle holds a single shade. No timer. No pressure.</p>
+        <button class="primary" id="continueButton">Begin with level 1 <span>→</span></button>
+      </div>
+      <div class="level-panel">
+        <div class="panel-title"><div><span class="eyebrow">Your journey</span><h2>120 levels</h2></div><span id="progressText">0 complete</span></div>
+        <div class="tier-tabs" id="tierTabs"></div>
+        <div class="level-grid" id="levelGrid"></div>
+      </div>
+    </section>
+
+    <section id="gameScreen" class="screen game-screen hidden">
+      <div class="game-heading">
+        <button class="back-btn" id="backButton" aria-label="Back to levels">←</button>
+        <div><span class="eyebrow" id="tierLabel">Beginner</span><h1>Level <span id="levelNumber">1</span></h1></div>
+        <div class="move-card"><small>MOVES</small><strong id="moveCount">0</strong><span>par <b id="parCount">6</b></span></div>
+      </div>
+      <div class="game-progress"><span id="gameProgressFill"></span></div>
+      <div class="board-wrap"><div class="board" id="board" aria-label="Puzzle board"></div></div>
+      <p class="game-message" id="message" aria-live="polite">Choose a bottle, then choose where to pour.</p>
+      <div class="controls">
+        <button id="undoButton"><span>↶</span>Undo</button>
+        <button id="restartButton"><span>↻</span>Restart</button>
+        <button id="shuffleButton"><span>⌁</span>Shuffle</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop hidden" id="completeModal">
+    <div class="complete-card" role="dialog" aria-modal="true" aria-labelledby="completeTitle">
+      <div class="confetti">✦ <span>●</span> ✦</div><p class="eyebrow">Perfectly sorted</p>
+      <h2 id="completeTitle">Beautiful work.</h2><div class="stars" id="stars">★★★</div>
+      <p>You completed level <b id="completeLevel">1</b> in <b id="completeMoves">0</b> moves.</p>
+      <button class="primary" id="nextButton">Next level <span>→</span></button>
+      <button class="text-btn" id="replayButton">Play again</button>
+    </div>
+  </div>
+  <div class="toast hidden" id="toast"></div>
+  <noscript>Color Zen needs JavaScript enabled to play.</noscript>
+</body>
+</html>
