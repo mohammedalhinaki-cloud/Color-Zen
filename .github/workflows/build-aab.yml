@@ -67,10 +67,15 @@ jobs:
       - name: Surface failures as annotations
         if: failure()
         run: |
-          grep -E "FAILED|error:|^e: |What went wrong|Caused by:|> " gradle-tests.log \
-            | grep -v "^> Task" | head -30 | while IFS= read -r line; do
-              echo "::error::${line:0:240}"
-            done
+          {
+            grep -E "FAILED|error:|^e: |What went wrong|Caused by:|> " gradle-tests.log \
+              | grep -v "^> Task"
+            # Candidate lists for "None of the following candidates" errors are
+            # printed on the following indented lines.
+            grep -A4 "None of the following candidates" gradle-tests.log | grep -v "^--$"
+          } | head -30 | while IFS= read -r line; do
+            echo "::error::${line:0:240}"
+          done
 
   build-aab:
     name: Release AAB
