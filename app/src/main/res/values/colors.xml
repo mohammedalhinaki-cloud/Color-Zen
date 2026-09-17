@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Window background shown before Compose draws its first frame. -->
+    <color name="zen_window_light">#FFF7F3EE</color>
+    <color name="zen_window_dark">#FF14161B</color>
+</resources>

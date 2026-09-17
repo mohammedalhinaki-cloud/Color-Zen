@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ============================================================= -->
+    <!-- App                                                            -->
+    <!-- ============================================================= -->
+    <string name="app_name">Color Zen</string>
+    <string name="app_version">Version %1$s</string>
+
+    <!-- Common actions -->
+    <string name="action_back">Back</string>
+    <string name="action_close">Close</string>
+
+    <!-- Difficulty tiers -->
+    <string name="tier_beginner">Beginner</string>
+    <string name="tier_easy">Easy</string>
+    <string name="tier_medium">Medium</string>
+    <string name="tier_hard">Hard</string>
+    <string name="tier_expert">Expert</string>
+    <string name="tier_master">Master</string>
+
+    <!--
+      Colour identifiers announced by TalkBack (bottom of a bottle to top).
+      They are positional rather than real colour names so the description
+      stays correct for every colour theme the player has unlocked.
+    -->
+    <string name="color_name_1">colour 1</string>
+    <string name="color_name_2">colour 2</string>
+    <string name="color_name_3">colour 3</string>
+    <string name="color_name_4">colour 4</string>
+    <string name="color_name_5">colour 5</string>
+    <string name="color_name_6">colour 6</string>
+    <string name="color_name_7">colour 7</string>
+    <string name="color_name_8">colour 8</string>
+    <string name="color_name_9">colour 9</string>
+    <string name="color_name_10">colour 10</string>
+    <string name="color_name_11">colour 11</string>
+
+    <!-- ============================================================= -->
+    <!-- Main menu                                                      -->
+    <!-- ============================================================= -->
+    <string name="menu_tagline">Sort the colours. Find your calm.</string>
+    <string name="menu_play_level">Play level %1$d</string>
+    <string name="menu_resume">Resume level %1$d</string>
+    <string name="menu_levels">Levels</string>
+    <string name="menu_shop">Shop</string>
+    <string name="menu_shop_subtitle">Level packs, hints and colour themes</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_settings_subtitle">Sound effects, purchases and privacy</string>
+    <string name="menu_privacy">Privacy Policy</string>
+    <string name="menu_privacy_subtitle">No personal data is collected</string>
+    <string name="menu_stat_levels">of %1$d levels</string>
+    <string name="menu_stat_stars">stars</string>
+    <string name="menu_stat_hints">hints</string>
+    <string name="menu_no_ads">No ads. No music. Just calm.</string>
+
+    <!-- ============================================================= -->
+    <!-- Level selection                                                -->
+    <!-- ============================================================= -->
+    <string name="levels_title">Levels</string>
+    <string name="levels_progress">%1$d of %2$d complete</string>
+    <string name="levels_locked">Locked</string>
+    <string name="levels_section_progress">%1$d/%2$d</string>
+    <string name="levels_section_shape">Levels %1$d–%2$d · %3$d bottles · %4$d colours</string>
+    <string name="levels_pack_title">Level Pack %1$d</string>
+    <string name="levels_pack_body">Levels %1$d–%2$d · %3$s</string>
+
+    <!-- ============================================================= -->
+    <!-- Gameplay                                                       -->
+    <!-- ============================================================= -->
+    <string name="game_level_title">Level %1$d</string>
+    <string name="game_hint_count">%1$d</string>
+    <string name="stat_moves">Moves</string>
+    <string name="stat_best">Best</string>
+    <string name="stat_sorted">Sorted</string>
+    <string name="stat_none">—</string>
+    <string name="game_undo">Undo</string>
+    <string name="game_shuffle">Shuffle</string>
+    <string name="game_hint">Hint</string>
+    <string name="game_restart">Restart</string>
+
+    <string name="notice_dead_end">No useful pours left. Try Undo, Shuffle or Restart.</string>
+    <string name="notice_no_hint_coins">No hints left. You can buy more in the Shop.</string>
+    <string name="notice_invalid_move">The top colours must match to pour.</string>
+    <string name="notice_hint_approximate">Suggested pour. There is no guaranteed solution from here, so Undo may help.</string>
+    <string name="notice_level_locked">This level is locked.</string>
+
+    <string name="level_locked_title">Level pack needed</string>
+    <string name="level_locked_body">Levels %1$d–%2$d are part of Level Pack %3$d. Buy it once and they stay unlocked forever.</string>
+    <string name="level_locked_action_shop">Open Shop</string>
+
+    <!-- ============================================================= -->
+    <!-- Level complete                                                 -->
+    <!-- ============================================================= -->
+    <string name="level_complete_title">Level complete</string>
+    <string name="level_complete_moves">Moves</string>
+    <string name="level_complete_par">Par</string>
+    <string name="level_complete_best">Best</string>
+    <string name="level_complete_new_best">New personal best</string>
+    <string name="level_complete_next">Next level</string>
+    <string name="level_complete_unlock">Unlock more levels</string>
+    <string name="level_complete_replay">Replay</string>
+    <string name="level_complete_levels">Levels</string>
+    <string name="campaign_finished_title">All 120 levels complete</string>
+    <string name="campaign_finished_body">Every bottle in Color Zen is sorted. Replay any level to beat your best score, or pick a new colour theme and play them again in a different palette.</string>
+    <string name="star_earned">Star earned</string>
+    <string name="star_empty">Star not earned</string>
+
+    <!-- ============================================================= -->
+    <!-- Shop                                                           -->
+    <!-- ============================================================= -->
+    <string name="shop_title">Shop</string>
+    <string name="shop_subtitle">One-time purchases. No ads, no subscriptions.</string>
+    <string name="shop_full_game_title">Full Game</string>
+    <string name="shop_full_game_body">Unlocks all 120 levels forever, including every level pack. The best value if you plan to play them all - %1$s once.</string>
+    <string name="shop_packs_title">Level packs</string>
+    <string name="shop_packs_body">30 new levels in every pack. The first 30 levels are free forever.</string>
+    <string name="shop_pack_name">Level Pack %1$d</string>
+    <string name="shop_pack_body">Levels %1$d–%2$d · %3$d levels</string>
+    <string name="shop_hints_title">10 hints</string>
+    <string name="shop_hints_body">You have %1$d hints. A hint reveals the best next pour and costs one hint.</string>
+    <string name="shop_themes_title">Colour themes</string>
+    <string name="shop_themes_body">Unlocks 4 extra colour sets and 3 extra bottle designs - %1$s once.</string>
+    <string name="shop_bottle_styles">Bottle designs</string>
+    <string name="shop_buy_for">Buy · %1$s</string>
+    <string name="shop_price_loading">Loading price</string>
+    <string name="shop_owned">Owned</string>
+    <string name="shop_locked">Locked</string>
+    <string name="shop_selected">Selected</string>
+    <string name="shop_view">Details</string>
+    <string name="shop_restore">Restore purchases</string>
+    <string name="shop_note_no_ads">Color Zen has no advertising and never will.</string>
+    <string name="shop_note_billing">Purchases are handled by Google Play. Play shows the final price and any tax in your own currency.</string>
+    <string name="shop_play_unavailable">Google Play is not reachable right now, so prices cannot be loaded. Check that you are signed in to the Play Store, then try again.</string>
+    <string name="shop_event_granted">Unlocked: %1$s</string>
+    <string name="shop_event_failed">The purchase did not complete (Play code %1$d). Nothing was charged unless Play confirms it.</string>
+    <string name="shop_event_restored">Purchases restored.</string>
+    <string name="shop_event_nothing">Nothing to restore on this Google account.</string>
+
+    <string name="palette_pastel">Pastel</string>
+    <string name="palette_sunset">Sunset</string>
+    <string name="palette_ocean">Ocean</string>
+    <string name="palette_candy">Candy</string>
+    <string name="palette_bloom">Bloom</string>
+
+    <string name="style_classic">Classic</string>
+    <string name="style_rounded">Rounded</string>
+    <string name="style_flask">Flask</string>
+    <string name="style_prism">Prism</string>
+
+    <!-- ============================================================= -->
+    <!-- Settings                                                       -->
+    <!-- ============================================================= -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_sound_title">Sound effects</string>
+    <string name="settings_sound_subtitle">Pours, taps and chimes. Color Zen contains no music at all.</string>
+    <string name="settings_purchases_title">Purchases</string>
+    <string name="settings_restore_subtitle">Re-apply purchases made with your Google account</string>
+    <string name="settings_about_title">About</string>
+    <string name="settings_support_title">Support</string>
+    <string name="settings_app_name">App</string>
+    <string name="settings_version">Version</string>
+    <string name="settings_version_value">%1$s (build %2$d)</string>
+    <string name="settings_package">Package</string>
+    <string name="settings_languages">Languages</string>
+    <string name="settings_languages_value">English, Arabic</string>
+    <string name="settings_content_rating">Content rating</string>
+    <string name="settings_content_rating_value">Everyone - safe for all ages</string>
+    <string name="settings_no_data">Color Zen collects no personal data. Your progress, hint balance and purchase records stay on this device.</string>
+
+    <!-- ============================================================= -->
+    <!-- Privacy policy                                                 -->
+    <!-- ============================================================= -->
+    <string name="privacy_title">Privacy Policy</string>
+    <string name="privacy_updated">Last updated: 1 September 2026</string>
+    <string name="privacy_intro">This policy explains what Color Zen does with your information. The honest summary is: nothing. The app has no accounts, no analytics, no advertising and no server of its own, and it asks for no personal information from you.</string>
+
+    <string name="privacy_s1_title">1. Information we collect</string>
+    <string name="privacy_s1_body">None. We do not collect, receive, store, transmit or sell personal data. There is no sign-up, no email address, no name, no phone number, no location, no device identifier, no advertising identifier and no behavioural tracking. We operate no analytics service and include no third-party tracking or advertising library in the app.</string>
+
+    <string name="privacy_s2_title">2. Data stored on your device</string>
+    <string name="privacy_s2_body">To make the game work, the app keeps a small amount of non-personal data in its own private storage on your device: which levels you have completed, your best move count and stars per level, your hint balance, your sound-effects setting, your chosen colour theme and bottle design, and a record of which Google Play products this installation has unlocked. This data never leaves your device through the app, and uninstalling the app deletes it.</string>
+
+    <string name="privacy_s3_title">3. Purchases</string>
+    <string name="privacy_s3_body">All purchases are processed by Google Play Billing, not by us. We never see, receive or store your card number, payment credentials or billing address; Google handles payment under the Google Play terms and the Google Privacy Policy. After a purchase the app records locally only the product identifier and an opaque purchase token issued by Google Play, which is used to make sure a purchase is delivered exactly once. Restoring purchases reads that information back from your Google account through Google Play.</string>
+
+    <string name="privacy_s4_title">4. Children</string>
+    <string name="privacy_s4_body">Color Zen is rated for Everyone and is designed to be safe for children. It contains no violence, no sexual content, no user-generated content, no chat, no social features and no links to external services other than the privacy policy page and your email client. Because the app collects no personal information from anyone, it collects none from children, and it is intended to be compliant with the United States Childrens Online Privacy Protection Act (COPPA) and equivalent rules for families.</string>
+
+    <string name="privacy_s5_title">5. Permissions</string>
+    <string name="privacy_s5_body">The app declares a single permission, com.android.vending.BILLING, which allows it to communicate with the Google Play Store application for in-app purchases. It does not request internet access, location, camera, microphone, contacts, calendar, storage or any other permission. Opening the privacy policy web page or the support email hands over to another application on your device; the app itself performs no network communication.</string>
+
+    <string name="privacy_s6_title">6. Backups</string>
+    <string name="privacy_s6_body">If you have enabled system backup in your Android settings, your operating system may copy the small amount of app data described in section 2 to your own Google account so it can be restored on a new device. That transfer is made by Android under your own account and settings, and is governed by the Google Privacy Policy. We have no access to it and no involvement in it.</string>
+
+    <string name="privacy_s7_title">7. Changes to this policy</string>
+    <string name="privacy_s7_body">If this policy changes, we will update the text in the app and the hosted copy of this page, and change the date at the top. Continuing to use Color Zen after a change means you accept the updated policy.</string>
+
+    <string name="privacy_s8_title">8. Contact</string>
+    <string name="privacy_s8_body">Questions about this policy, or a request about your data, can be sent to support@colorzen.app. Because we hold no personal data about you, there is normally nothing for us to delete or export; if you want the on-device data removed, uninstalling Color Zen deletes it.</string>
+
+    <string name="privacy_open_browser">Open in browser</string>
+
+</resources>
