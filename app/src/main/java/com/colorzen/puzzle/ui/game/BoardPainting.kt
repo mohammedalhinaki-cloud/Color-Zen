@@ -5,7 +5,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.RoundRect
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.ClipMode
+import androidx.compose.ui.graphics.ClipOp
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.StrokeCap
@@ -56,10 +56,10 @@ internal object BoardPainting {
                     top = rect.top,
                     right = rect.right,
                     bottom = rect.bottom,
-                    topLeft = CornerRadius(width * top, width * top),
-                    topRight = CornerRadius(width * top, width * top),
-                    bottomRight = CornerRadius(width * bottom, width * bottom),
-                    bottomLeft = CornerRadius(width * bottom, width * bottom),
+                    topLeftCornerRadius = CornerRadius(width * top, width * top),
+                    topRightCornerRadius = CornerRadius(width * top, width * top),
+                    bottomRightCornerRadius = CornerRadius(width * bottom, width * bottom),
+                    bottomLeftCornerRadius = CornerRadius(width * bottom, width * bottom),
                 ),
             )
         }
@@ -163,7 +163,7 @@ internal object BoardPainting {
                         drawPath(path = path, color = glassFill)
                         val wallPx = wall(rect)
 
-                        clipPath(path = path, clipMode = ClipMode.Intersect) {
+                        clipPath(path = path, clipOp = ClipOp.Intersect) {
                             for (index in segments.indices) {
                                 val segmentRect = geometry.segmentRect(rect, wallPx, index, capacity)
                                 val color = Color(palette.colorForId(segments[index]))
