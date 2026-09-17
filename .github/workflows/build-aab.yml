@@ -1,10 +1,13 @@
 name: Build AAB
 
-# Builds and tests Color Zen on every push. Google Play accepts AAB only, so the
-# release job produces an Android App Bundle (`bundleRelease`).
+# Builds and tests Color Zen on every push. Google Play accepts AAB only, so
+# the release job produces an Android App Bundle (`bundleRelease`).
 #
-# Optional signing: add these repository secrets to get a *signed* AAB that can
-# be uploaded straight to Play Console:
+# Uses only GitHub-owned actions (checkout / setup-java / upload-artifact) and
+# the Android SDK pre-installed on the ubuntu runners.
+#
+# Optional signing: add these repository secrets to get a *signed* AAB that
+# can be uploaded straight to Play Console:
 #   KEYSTORE_BASE64     base64 of the upload .jks/.keystore file
 #   KEYSTORE_PASSWORD   keystore password
 #   KEY_ALIAS           key alias
@@ -37,15 +40,10 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
-
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Set up Gradle
-        uses: gradle/actions/setup-gradle@v4
+          cache: gradle
 
       - name: Run unit tests
-        run: ./gradlew testDebugUnitTest --stacktrace
+        run: set -o pipefail; ./gradlew testDebugUnitTest --stacktrace 2>&1 | tee gradle-tests.log
 
       - name: Upload test reports
         if: always()
@@ -54,6 +52,31 @@ jobs:
           name: unit-test-reports
           path: app/build/reports/tests/
           if-no-files-found: ignore
+
+      - name: Upload Gradle log on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gradle-failure-log
+          path: gradle-tests.log
+          if-no-files-found: ignore
+
+      # Echo the interesting failure lines as workflow annotations, which stay
+      # readable through the check-run API even when raw logs/artifacts are
+      # hard to reach.
+      - name: Surface failures as annotations
+        if: failure()
+        run: |
+          {
+            grep -E "FAILED|error:|^e: |What went wrong|Caused by:|> " gradle-tests.log \
+              | grep -v "^> Task"
+            # Candidate lists for "None of the following candidates" errors and
+            # assertion messages are printed on the following indented lines.
+            grep -A4 "None of the following candidates" gradle-tests.log | grep -v "^--$"
+            grep -A6 " FAILED$" gradle-tests.log | grep -v "^--$"
+          } | head -30 | while IFS= read -r line; do
+            echo "::error::${line:0:240}"
+          done
 
   build-aab:
     name: Release AAB
@@ -68,21 +91,21 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
+          cache: gradle
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Set up Gradle
-        uses: gradle/actions/setup-gradle@v4
-
+      # Guarded in the shell instead of an `if:` expression so the workflow
+      # lints even in organisations that restrict secret access in conditions.
       - name: Decode upload keystore (optional)
-        if: ${{ secrets.KEYSTORE_BASE64 != '' }}
         env:
           KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
         run: |
+          if [ -z "$KEYSTORE_BASE64" ]; then
+            echo "No KEYSTORE_BASE64 secret set - building with debug signing."
+            exit 0
+          fi
           echo "$KEYSTORE_BASE64" | base64 -d > release.keystore
           {
             echo "storeFile=../release.keystore"
@@ -93,7 +116,15 @@ jobs:
           echo "Signing release with the uploaded keystore."
 
       - name: Build release bundle
-        run: ./gradlew bundleRelease --stacktrace
+        run: set -o pipefail; ./gradlew bundleRelease --stacktrace 2>&1 | tee gradle-bundle.log
+
+      - name: Upload Gradle log on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gradle-bundle-failure-log
+          path: gradle-bundle.log
+          if-no-files-found: ignore
 
       - name: Show bundle info
         run: |
