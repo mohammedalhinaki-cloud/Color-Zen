@@ -61,22 +61,16 @@ jobs:
           path: gradle-tests.log
           if-no-files-found: ignore
 
-      # Diagnostic escape hatch: commit the log tail to the branch so it can
-      # be read through the contents API. Guarded so it commits at most once
-      # and never re-triggers itself.
-      - name: Push failure log to branch (diagnostics)
+      # Echo the interesting failure lines as workflow annotations, which stay
+      # readable through the check-run API even when raw logs/artifacts are
+      # hard to reach.
+      - name: Surface failures as annotations
         if: failure()
         run: |
-          if git ls-files --error-unmatch ci-failure.log >/dev/null 2>&1; then
-            echo "Failure log already tracked; not committing again."
-            exit 0
-          fi
-          git config user.name "Arena CI"
-          git config user.email "arena-ci@users.noreply.github.com"
-          tail -300 gradle-tests.log > ci-failure.log
-          git add ci-failure.log
-          git commit -m "ci: attach Gradle failure log for diagnostics"
-          git push
+          grep -E "FAILED|error:|^e: |What went wrong|Caused by:|> " gradle-tests.log \
+            | grep -v "^> Task" | head -12 | while IFS= read -r line; do
+              echo "::error::${line:0:240}"
+            done
 
   build-aab:
     name: Release AAB
