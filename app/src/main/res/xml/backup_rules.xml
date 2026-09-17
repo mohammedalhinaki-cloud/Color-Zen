@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Android 11 and below (android:fullBackupContent). Only the player's own
+  SharedPreferences are backed up: level progress, best scores, hint balance,
+  sound setting and theme choice. Nothing else is stored by the app.
+-->
+<full-backup-content>
+    <include
+        domain="sharedpref"
+        path="colorzen_player.xml" />
+</full-backup-content>

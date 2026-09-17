@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Arabic (العربية) localisation.
+
+  The whole app is right-to-left: `android:supportsRtl="true"` is set in the
+  manifest, Compose mirrors layouts automatically from the layout direction, and
+  the back arrow / chevron vectors are auto-mirrored.
+
+  Number ranges are written as "من X إلى Y" instead of "X–Y" so bidirectional
+  text cannot reorder the digits. The brand name stays in Latin script.
+-->
+<resources>
+
+    <!-- ============================================================= -->
+    <!-- التطبيق                                                        -->
+    <!-- ============================================================= -->
+    <string name="app_name">Color Zen</string>
+    <string name="app_version">الإصدار %1$s</string>
+
+    <string name="action_back">رجوع</string>
+    <string name="action_close">إغلاق</string>
+
+    <string name="tier_beginner">مبتدئ</string>
+    <string name="tier_easy">سهل</string>
+    <string name="tier_medium">متوسط</string>
+    <string name="tier_hard">صعب</string>
+    <string name="tier_expert">خبير</string>
+    <string name="tier_master">محترف</string>
+
+    <!--
+      معرّفات الألوان التي يقرأها TalkBack (من أسفل الزجاجة إلى أعلاها).
+      هي مواضع وليست أسماء ألوان حقيقية حتى تبقى الوصف صحيحًا مع كل ثيم.
+    -->
+    <string name="color_name_1">اللون 1</string>
+    <string name="color_name_2">اللون 2</string>
+    <string name="color_name_3">اللون 3</string>
+    <string name="color_name_4">اللون 4</string>
+    <string name="color_name_5">اللون 5</string>
+    <string name="color_name_6">اللون 6</string>
+    <string name="color_name_7">اللون 7</string>
+    <string name="color_name_8">اللون 8</string>
+    <string name="color_name_9">اللون 9</string>
+    <string name="color_name_10">اللون 10</string>
+    <string name="color_name_11">اللون 11</string>
+
+    <!-- ============================================================= -->
+    <!-- القائمة الرئيسية                                                -->
+    <!-- ============================================================= -->
+    <string name="menu_tagline">رتّب الألوان، واستمتع بالهدوء.</string>
+    <string name="menu_play_level">العب المستوى %1$d</string>
+    <string name="menu_resume">متابعة المستوى %1$d</string>
+    <string name="menu_levels">المستويات</string>
+    <string name="menu_shop">المتجر</string>
+    <string name="menu_shop_subtitle">حزم المستويات والتلميحات وثيمات الألوان</string>
+    <string name="menu_settings">الإعدادات</string>
+    <string name="menu_settings_subtitle">المؤثرات الصوتية والمشتريات والخصوصية</string>
+    <string name="menu_privacy">سياسة الخصوصية</string>
+    <string name="menu_privacy_subtitle">لا يتم جمع أي بيانات شخصية</string>
+    <string name="menu_stat_levels">من %1$d مستوى</string>
+    <string name="menu_stat_stars">نجوم</string>
+    <string name="menu_stat_hints">تلميحات</string>
+    <string name="menu_no_ads">بدون إعلانات. بدون موسيقى. فقط هدوء.</string>
+
+    <!-- ============================================================= -->
+    <!-- اختيار المستوى                                                 -->
+    <!-- ============================================================= -->
+    <string name="levels_title">المستويات</string>
+    <string name="levels_progress">اكتمل %1$d من %2$d</string>
+    <string name="levels_locked">مقفل</string>
+    <string name="levels_section_progress">%1$d/%2$d</string>
+    <string name="levels_section_shape">المستويات من %1$d إلى %2$d · %3$d زجاجات · %4$d ألوان</string>
+    <string name="levels_pack_title">حزمة المستويات %1$d</string>
+    <string name="levels_pack_body">المستويات من %1$d إلى %2$d · %3$s</string>
+
+    <!-- ============================================================= -->
+    <!-- اللعب                                                          -->
+    <!-- ============================================================= -->
+    <string name="game_level_title">المستوى %1$d</string>
+    <string name="game_hint_count">%1$d</string>
+    <string name="stat_moves">الحركات</string>
+    <string name="stat_best">الأفضل</string>
+    <string name="stat_sorted">مرتّب</string>
+    <string name="stat_none">—</string>
+    <string name="game_undo">تراجع</string>
+    <string name="game_shuffle">خلط</string>
+    <string name="game_hint">تلميح</string>
+    <string name="game_restart">إعادة</string>
+
+    <string name="notice_dead_end">لا توجد صبّات مفيدة. جرّب التراجع أو الخلط أو الإعادة.</string>
+    <string name="notice_no_hint_coins">لا توجد تلميحات. يمكنك شراء المزيد من المتجر.</string>
+    <string name="notice_invalid_move">يجب أن يتطابق اللونان العلويان حتى تتمكن من الصب.</string>
+    <string name="notice_hint_approximate">صبّة مقترحة. لا يوجد حل مضمون من هنا، وقد يفيدك التراجع.</string>
+    <string name="notice_level_locked">هذا المستوى مقفل.</string>
+
+    <string name="level_locked_title">تحتاج حزمة مستويات</string>
+    <string name="level_locked_body">المستويات من %1$d إلى %2$d ضمن حزمة المستويات %3$d. اشترِها مرة واحدة لتبقى مفتوحة للأبد.</string>
+    <string name="level_locked_action_shop">افتح المتجر</string>
+
+    <!-- ============================================================= -->
+    <!-- اكتمال المستوى                                                 -->
+    <!-- ============================================================= -->
+    <string name="level_complete_title">اكتمل المستوى</string>
+    <string name="level_complete_moves">الحركات</string>
+    <string name="level_complete_par">المثالي</string>
+    <string name="level_complete_best">الأفضل</string>
+    <string name="level_complete_new_best">رقم شخصي جديد</string>
+    <string name="level_complete_next">المستوى التالي</string>
+    <string name="level_complete_unlock">افتح مستويات أخرى</string>
+    <string name="level_complete_replay">إعادة اللعب</string>
+    <string name="level_complete_levels">المستويات</string>
+    <string name="campaign_finished_title">اكتملت جميع المستويات الـ120</string>
+    <string name="campaign_finished_body">كل الزجاجات في Color Zen مرتّبة. أعد لعب أي مستوى لتحسين أفضل نتيجة لك، أو اختر ثيم ألوان جديدًا والعبها مرة أخرى بلوحة مختلفة.</string>
+    <string name="star_earned">نجمة مكتسبة</string>
+    <string name="star_empty">نجمة غير مكتسبة</string>
+
+    <!-- ============================================================= -->
+    <!-- المتجر                                                         -->
+    <!-- ============================================================= -->
+    <string name="shop_title">المتجر</string>
+    <string name="shop_subtitle">عمليات شراء لمرة واحدة. بدون إعلانات وبدون اشتراكات.</string>
+    <string name="shop_full_game_title">اللعبة الكاملة</string>
+    <string name="shop_full_game_body">يفتح جميع المستويات الـ120 للأبد، بما في ذلك كل حزم المستويات. أفضل قيمة إذا كنت تنوي لعبها كلها - %1$s مرة واحدة.</string>
+    <string name="shop_packs_title">حزم المستويات</string>
+    <string name="shop_packs_body">30 مستوى جديدًا في كل حزمة. أول 30 مستوى مجانية للأبد.</string>
+    <string name="shop_pack_name">حزمة المستويات %1$d</string>
+    <string name="shop_pack_body">المستويات من %1$d إلى %2$d · %3$d مستوى</string>
+    <string name="shop_hints_title">10 تلميحات</string>
+    <string name="shop_hints_body">لديك %1$d تلميحات. يكشف التلميح أفضل صبّة تالية ويكلّف تلميحًا واحدًا.</string>
+    <string name="shop_themes_title">ثيمات الألوان</string>
+    <string name="shop_themes_body">يفتح 4 مجموعات ألوان إضافية و3 تصاميم زجاجات إضافية - %1$s مرة واحدة.</string>
+    <string name="shop_bottle_styles">تصاميم الزجاجات</string>
+    <string name="shop_buy_for">شراء · %1$s</string>
+    <string name="shop_price_loading">جارٍ تحميل السعر</string>
+    <string name="shop_owned">مملوك</string>
+    <string name="shop_locked">مقفل</string>
+    <string name="shop_selected">مُحدَّد</string>
+    <string name="shop_view">التفاصيل</string>
+    <string name="shop_restore">استعادة المشتريات</string>
+    <string name="shop_note_no_ads">Color Zen بدون إعلانات ولن يحتوي عليها أبدًا.</string>
+    <string name="shop_note_billing">تتم عمليات الشراء عبر Google Play. يعرض Play السعر النهائي وأي ضريبة بعملتك.</string>
+    <string name="shop_play_unavailable">لا يمكن الوصول إلى Google Play الآن، لذا لا يمكن تحميل الأسعار. تأكد من تسجيل الدخول إلى متجر Play ثم حاول مرة أخرى.</string>
+    <string name="shop_event_granted">تم الفتح: %1$s</string>
+    <string name="shop_event_failed">لم تكتمل عملية الشراء (رمز Play ‏%1$d). لم يتم خصم أي مبلغ ما لم يؤكده Play.</string>
+    <string name="shop_event_restored">تمت استعادة المشتريات.</string>
+    <string name="shop_event_nothing">لا يوجد ما يمكن استعادته على حساب Google هذا.</string>
+
+    <string name="palette_pastel">باستيل</string>
+    <string name="palette_sunset">غروب</string>
+    <string name="palette_ocean">محيط</string>
+    <string name="palette_candy">حلوى</string>
+    <string name="palette_bloom">تفتُّح</string>
+
+    <string name="style_classic">كلاسيكي</string>
+    <string name="style_rounded">دائري</string>
+    <string name="style_flask">قمعي</string>
+    <string name="style_prism">موشوري</string>
+
+    <!-- ============================================================= -->
+    <!-- الإعدادات                                                      -->
+    <!-- ============================================================= -->
+    <string name="settings_title">الإعدادات</string>
+    <string name="settings_sound_title">المؤثرات الصوتية</string>
+    <string name="settings_sound_subtitle">أصوات الصب والنقر والرنين. لا تحتوي Color Zen على أي موسيقى.</string>
+    <string name="settings_purchases_title">المشتريات</string>
+    <string name="settings_restore_subtitle">إعادة تطبيق المشتريات المرتبطة بحساب Google الخاص بك</string>
+    <string name="settings_about_title">حول التطبيق</string>
+    <string name="settings_support_title">الدعم</string>
+    <string name="settings_app_name">التطبيق</string>
+    <string name="settings_version">الإصدار</string>
+    <string name="settings_version_value">%1$s (البناء %2$d)</string>
+    <string name="settings_package">معرّف الحزمة</string>
+    <string name="settings_languages">اللغات</string>
+    <string name="settings_languages_value">العربية، الإنجليزية</string>
+    <string name="settings_content_rating">التصنيف العمري</string>
+    <string name="settings_content_rating_value">الجميع - آمن لكل الأعمار</string>
+    <string name="settings_no_data">لا يجمع Color Zen أي بيانات شخصية. يبقى تقدّمك ورصيد التلميحات وسجل المشتريات على هذا الجهاز فقط.</string>
+
+    <!-- ============================================================= -->
+    <!-- سياسة الخصوصية                                                 -->
+    <!-- ============================================================= -->
+    <string name="privacy_title">سياسة الخصوصية</string>
+    <string name="privacy_updated">آخر تحديث: 1 سبتمبر 2026</string>
+    <string name="privacy_intro">توضح هذه السياسة ما يفعله Color Zen بمعلوماتك. والملخص الصادق هو: لا شيء. لا يحتوي التطبيق على حسابات أو تحليلات أو إعلانات أو خادم خاص به، ولا يطلب منك أي معلومات شخصية.</string>
+
+    <string name="privacy_s1_title">1. المعلومات التي نجمعها</string>
+    <string name="privacy_s1_body">لا شيء. نحن لا نجمع أو نستلم أو نخزّن أو ننقل أو نبيع أي بيانات شخصية. لا يوجد تسجيل دخول ولا بريد إلكتروني ولا اسم ولا رقم هاتف ولا موقع ولا معرّف جهاز ولا معرّف إعلاني ولا تتبّع للسلوك. ولا نشغّل أي خدمة تحليلات ولا نضمّن في التطبيق أي مكتبة تتبّع أو إعلانات من أطراف ثالثة.</string>
+
+    <string name="privacy_s2_title">2. البيانات المخزَّنة على جهازك</string>
+    <string name="privacy_s2_body">لكي تعمل اللعبة، يحتفظ التطبيق بكمية صغيرة من البيانات غير الشخصية في تخزينه الخاص على جهازك: المستويات التي أكملتها، وأفضل عدد حركات ونجوم لكل مستوى، ورصيد التلميحات، وإعداد المؤثرات الصوتية، وثيم الألوان وتصميم الزجاجة الذي اخترته، وسجل منتجات Google Play التي فتحها هذا التثبيت. ولا تغادر هذه البيانات جهازك عبر التطبيق، ويؤدي إلغاء تثبيت التطبيق إلى حذفها.</string>
+
+    <string name="privacy_s3_title">3. المشتريات</string>
+    <string name="privacy_s3_body">تتم معالجة جميع عمليات الشراء بواسطة Google Play Billing وليس بواسطتنا. ونحن لا نطّلع أبدًا على رقم بطاقتك أو بيانات الدفع أو عنوان الفوترة ولا نخزّنها؛ وتتولى Google معالجة الدفع وفق شروط Google Play وسياسة خصوصية Google. وبعد الشراء يسجّل التطبيق محليًا معرّف المنتج فقط ورمز شراء غير قابل للقراءة تصدره Google Play، ويُستخدم لضمان تسليم الشراء مرة واحدة فقط. وتقرأ ميزة استعادة المشتريات هذه المعلومات من حسابك في Google عبر Google Play.</string>
+
+    <string name="privacy_s4_title">4. الأطفال</string>
+    <string name="privacy_s4_body">صُنّف Color Zen للجميع وصُمّم ليكون آمنًا للأطفال. لا يحتوي على عنف أو محتوى جنسي أو محتوى من إنشاء المستخدمين أو محادثة أو ميزات اجتماعية أو روابط إلى خدمات خارجية سوى صفحة سياسة الخصوصية وبرنامج البريد الإلكتروني. ولأن التطبيق لا يجمع معلومات شخصية من أي شخص، فهو لا يجمع أي معلومات من الأطفال، وهو مصمَّم ليتوافق مع قانون حماية خصوصية الأطفال على الإنترنت في الولايات المتحدة (COPPA) والقواعد المماثلة الخاصة بالعائلات.</string>
+
+    <string name="privacy_s5_title">5. الأذونات</string>
+    <string name="privacy_s5_body">يعلن التطبيق إذنًا واحدًا فقط هو com.android.vending.BILLING، والذي يسمح له بالتواصل مع تطبيق متجر Google Play لإجراء عمليات الشراء داخل التطبيق. ولا يطلب الوصول إلى الإنترنت أو الموقع أو الكاميرا أو الميكروفون أو جهات الاتصال أو التقويم أو التخزين أو أي إذن آخر. وفتح صفحة سياسة الخصوصية أو بريد الدعم ينقل المهمة إلى تطبيق آخر على جهازك؛ فالتطبيق نفسه لا يجري أي اتصال بالشبكة.</string>
+
+    <string name="privacy_s6_title">6. النسخ الاحتياطي</string>
+    <string name="privacy_s6_body">إذا كنت قد فعّلت النسخ الاحتياطي للنظام في إعدادات Android، فقد ينسخ نظام التشغيل كمية البيانات الصغيرة المذكورة في القسم 2 إلى حساب Google الخاص بك لاستعادتها على جهاز جديد. ويتم هذا النقل بواسطة Android ضمن حسابك وإعداداتك ويخضع لسياسة خصوصية Google. ولا نملك أي وصول إليه أو مشاركة فيه.</string>
+
+    <string name="privacy_s7_title">7. التغييرات على هذه السياسة</string>
+    <string name="privacy_s7_body">إذا تغيّرت هذه السياسة، فسنحدّث النص داخل التطبيق والنسخة المنشورة من هذه الصفحة ونغيّر التاريخ في الأعلى. ويعني استمرارك في استخدام Color Zen بعد أي تغيير أنك تقبل السياسة المحدَّثة.</string>
+
+    <string name="privacy_s8_title">8. التواصل</string>
+    <string name="privacy_s8_body">يمكن إرسال أي أسئلة حول هذه السياسة أو أي طلب يتعلق ببياناتك إلى support@colorzen.app. ولأننا لا نحتفظ بأي بيانات شخصية عنك، فلا يوجد عادةً ما يلزم حذفه أو تصديره؛ وإذا أردت إزالة البيانات المخزَّنة على الجهاز، فإن إلغاء تثبيت Color Zen يحذفها.</string>
+
+    <string name="privacy_open_browser">فتح في المتصفح</string>
+
+</resources>
