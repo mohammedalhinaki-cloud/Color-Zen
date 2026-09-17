@@ -43,7 +43,7 @@ jobs:
           cache: gradle
 
       - name: Run unit tests
-        run: ./gradlew testDebugUnitTest --stacktrace
+        run: set -o pipefail; ./gradlew testDebugUnitTest --stacktrace 2>&1 | tee gradle-tests.log
 
       - name: Upload test reports
         if: always()
@@ -51,6 +51,14 @@ jobs:
         with:
           name: unit-test-reports
           path: app/build/reports/tests/
+          if-no-files-found: ignore
+
+      - name: Upload Gradle log on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gradle-failure-log
+          path: gradle-tests.log
           if-no-files-found: ignore
 
   build-aab:
@@ -91,7 +99,15 @@ jobs:
           echo "Signing release with the uploaded keystore."
 
       - name: Build release bundle
-        run: ./gradlew bundleRelease --stacktrace
+        run: set -o pipefail; ./gradlew bundleRelease --stacktrace 2>&1 | tee gradle-bundle.log
+
+      - name: Upload Gradle log on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gradle-bundle-failure-log
+          path: gradle-bundle.log
+          if-no-files-found: ignore
 
       - name: Show bundle info
         run: |
