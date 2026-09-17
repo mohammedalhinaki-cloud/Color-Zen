@@ -156,7 +156,9 @@ class PlayerStore(context: Context) {
     fun markTokenGranted(token: String): Boolean {
         if (token.isBlank()) return false
         if (token in _grantedTokens.value) return false
-        val next = (_grantedTokens.value + token).takeLast(MAX_TOKENS)
+        // `Set` has no takeLast, so round-trip through List. Insertion order is
+        // preserved throughout (LinkedHashSet), so the oldest tokens drop first.
+        val next = (_grantedTokens.value + token).toList().takeLast(MAX_TOKENS).toSet()
         _grantedTokens.value = next
         prefs.edit().putString(KEY_TOKENS, encodeSet(next)).apply()
         return true

@@ -60,9 +60,9 @@ fun ZenScreen(
             .fillMaxSize()
             .background(
                 Brush.verticalGradient(
-                    0f -> accent.copy(alpha = 0.10f),
-                    0.45f -> backdrop,
-                    1f -> backdrop,
+                    0f to accent.copy(alpha = 0.10f),
+                    0.45f to backdrop,
+                    1f to backdrop,
                 ),
             ),
     ) {
