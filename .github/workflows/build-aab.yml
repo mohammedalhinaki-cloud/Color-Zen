@@ -70,9 +70,10 @@ jobs:
           {
             grep -E "FAILED|error:|^e: |What went wrong|Caused by:|> " gradle-tests.log \
               | grep -v "^> Task"
-            # Candidate lists for "None of the following candidates" errors are
-            # printed on the following indented lines.
+            # Candidate lists for "None of the following candidates" errors and
+            # assertion messages are printed on the following indented lines.
             grep -A4 "None of the following candidates" gradle-tests.log | grep -v "^--$"
+            grep -A6 " FAILED$" gradle-tests.log | grep -v "^--$"
           } | head -30 | while IFS= read -r line; do
             echo "::error::${line:0:240}"
           done

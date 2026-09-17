@@ -80,7 +80,7 @@ class GameRulesTest {
     fun `apply moves the whole top run when it fits`() {
         val s = state(bottle(1, 2, 2), bottle(2), bottle())
         val next = GameRules.apply(s, GameRules.Move(0, 1, 4))
-        assertEquals(state(bottle(1), bottle(2, 2, 2)), next)
+        assertEquals(state(bottle(1), bottle(2, 2, 2), bottle()), next)
     }
 
     @Test

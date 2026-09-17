@@ -31,7 +31,8 @@ object Entitlements {
      * been completed (sequential progression, the norm for this genre).
      */
     fun isLevelUnlocked(owned: Set<String>, completed: Set<Int>, level: Int): Boolean {
-        if (level <= 1) return true
+        if (level < 1) return false
+        if (level == 1) return true
         if (level > LevelPlan.TOTAL_LEVELS) return false
         if (!ownsPack(owned, LevelPlan.packIndexFor(level))) return false
         return (level - 1) in completed
